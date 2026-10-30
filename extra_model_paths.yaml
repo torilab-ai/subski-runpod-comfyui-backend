@@ -19,7 +19,10 @@ subski_volume:
   embeddings: models/embeddings/
   model_patches: models/model_patches/
   audio_encoders: models/audio_encoders/
+  # LLM Session ノード用の GGUF（ノードは folder_paths の "LLM" も探索する）
+  LLM: models/LLM/
 
-# 自作ノードの試作用（追加の pip 依存がないノードに限る。正式版はイメージに焼き込む）
-subski_dev_nodes:
-  custom_nodes: /runpod-volume/ComfyUI/custom_nodes_dev/
+# カスタムノードを Network Volume に置き、Manager のインストール先（先頭）にする
+subski_nodes:
+  custom_nodes: /runpod-volume/ComfyUI/custom_nodes/
+  is_default: true
